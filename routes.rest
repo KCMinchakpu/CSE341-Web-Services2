@@ -40,6 +40,7 @@ GET http://localhost:8085/books/65b2d335a413663275c0560e HTTP/1.1
 
 ### (Modern Web Design and Development)
 GET http://localhost:8085/books/65b2d5ba035bf9650a7f4cba HTTP/1.1
+
 ///////////////////////////////////////////////////////////////
 
 ### Create New Book Details 
@@ -53,93 +54,5 @@ Content-Type: application/json
     "authorName": "Anders Hejlsberg et al",
     "releaseDate": "2011",
     "publisher": "Addison-Wesley",
-    "price": " $93.97"
+    "price": "$93.97"
 }
-
-//////////////////////////////////////////////////////////////
-### Update Book Details
-PUT http://localhost:8085/books HTTP/1.1
-Content-Type: application/json
-
-{
-    "bookISBN": "Magaret",
-    "bookTitle": "Minchakpu",
-    "bookDescription": "Maggie112@yahoo.com",
-    "authorName": "Gray",
-    "releaseDate": "05/10/2009",
-    "publisher": "",
-    "price": ""
-}
-
-/////////////////////////////////////////////////////////////
-### Delete Book Details
-DELETE http://localhost:8085/books HTTP/1.1
-
-
-////////////////////////////////////////////////////////////
-//Render
-### Get all Books Details
-GET https://project2-part1-xcah.onrender.com/books HTTP/1.1
-
-### Get a Book Detals Based on ID
-### (Programming for Absolute Beginners)
-GET https://project2-part1-xcah.onrender.com/books/65af07af1de1c77790af2624 HTTP/1.1
-
-### (Egoyibo)
-GET https://project2-part1-xcah.onrender.com/books/65af08001de1c77790af2625 HTTP/1.1
-
-### (Jane)
-GET https://project2-part1-xcah.onrender.com/books/65af08251de1c77790af2626 HTTP/1.1
-
-### (Margaret)
-GET https://project2-part1-xcah.onrender.com/books/65af08451de1c77790af2627 HTTP/1.1
-
-### (Luka)
-GET https://project2-part1-xcah.onrender.com/books/65af086b1de1c77790af2628 HTTP/1.1
-
-### ()
-GET https://project2-part1-xcah.onrender.com/books/65b24e8f61690a1b9153c07f HTTP/1.1
-
-### ()
-GET https://project2-part1-xcah.onrender.com/books/65b24fef61690a1b9153c080 HTTP/1.1
-
-### ()
-GET https://project2-part1-xcah.onrender.com/books/65b251d361690a1b9153c081 HTTP/1.1
-
-### ()
-GET https://project2-part1-xcah.onrender.com/books/65b254ce61690a1b9153c082 HTTP/1.1
-### ()
-GET https://project2-part1-xcah.onrender.com/books/65b256ef01a8fb81bb68850b HTTP/1.1
-
-
-
-### Create New Books Details
-POST https://project2-part1-xcah.onrender.com/books HTTP/1.1
-Content-Type: application/json
-
-{
-    "bookISBN": "9783943075083",
-    "bookTitle": "Modern Web Design and Development",
-    "bookDescription": "This eBook on Modern Web Design and Development touches on what Web designers should be ready for to keep abreast of new challenges and opportunities",
-    "authorName": "Thomas Burkert",
-    "releaseDate": "2011",
-    "publisher": "Smashing Media",
-    "price": "$ 22.44"
-}
-
-### Update Book Details
-PUT https://project2-part1-xcah.onrender.com/books/65b2d96492f5aefd951fe2d3 HTTP/1.1
-Content-Type: application/json
-
-{
-    "bookISBN": "9783943075083",
-    "bookTitle": "Modern Web Design and Development",
-    "bookDescription": "This eBook on Modern Web Design and Development touches on what Web designers should be ready for to keep abreast of new challenges and opportunities.",
-    "authorName": "Thomas Burkert",
-    "releaseDate": "2011",
-    "publisher": "Smashing Media",
-    "price": "$ 22.45"
-}
-
-### Delete Book Detals
-DELETE https://project2-part1-xcah.onrender.com/books HTTP/1.1
