@@ -7,6 +7,7 @@ const app = express();
 
 const port = process.env.PORT || 8085;
 
+app.use(bodyParser.json())
 app.use('/', require('./routes'));
 
 mongodb.initDb((err) => {
