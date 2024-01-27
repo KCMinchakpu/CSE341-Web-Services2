@@ -17,7 +17,7 @@ const getAllBooksdetails = async (req, res) => {
 
 //Read (GET) one Book Details (based on Id) from the database
 const getSingleBookdetails = async (req, res) => { 
-  
+        // swagger.tags = ['books']
         const bookId = new ObjectId(req.params.id);
         const result = await mongodb            
             .getDatabase()
@@ -57,8 +57,8 @@ const createBookdetails = async (req, res, next) => {
 };
 //Update (PUT) an old Book Details in the Database
 const updateBookdetails = async (req, res) => {
+  // swagger.tags = ['books']
     const bookId = new ObjectId(req.params.id);
-     
      const updateBook = {
       bookISBN: req.body.bookISBN,
            bookTitle: req.body.bookTitle,
@@ -84,6 +84,7 @@ const updateBookdetails = async (req, res) => {
 
 //Delete (DELETE) a Book Details from the Database
 const deleteBookdetails = async (req, res) => {
+  // swagger.tags = ['books']
     const bookId = new ObjectId(req.params.id);
     const response = await mongodb
     .getDatabase()

@@ -1,0 +1,180 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Book API",
+    "description": "This is an API for Creating, Updating and Deleting Books Details in a Database",
+    "version": "1.0.0"
+  },
+  "host": "localhost:8085",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "This is the Index JS File",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/books/": {
+      "get": {
+        "description": "Get All Books Details from the Database",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "Create a New Book Details in the Database",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "bookISBN": {
+                  "example": "9780321741769"
+                },
+                "bookTitle": {
+                  "example": "The C# Programming Language, 4th Edition"
+                },
+                "bookDescription": {
+                  "example": "The popular C# programming language combines the high productivity of rapid application development languages with the raw power of C and C++."
+                },
+                "authorName": {
+                  "example": "Anders Hejlsberg et al"
+                },
+                "releaseDate": {
+                  "example": "2011"
+                },
+                "publisher": {
+                  "example": "Addison-Wesley"
+                },
+                "price": {
+                  "example": "$39.99"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/books/{id}": {
+      "get": {
+        "description": "Get a Book Details from the Database based on ID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "description": "Update and Old Bokk Details in the Database based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "bookISBN": {
+                  "example": "9780321741769"
+                },
+                "bookTitle": {
+                  "example": "The C# Programming Language, 4th Edition"
+                },
+                "bookDescription": {
+                  "example": "The popular C# programming language combines the high productivity of rapid application development languages with the raw power of C and C++."
+                },
+                "authorName": {
+                  "example": "Anders Hejlsberg et al"
+                },
+                "releaseDate": {
+                  "example": "2011"
+                },
+                "publisher": {
+                  "example": "Addison-Wesley"
+                },
+                "price": {
+                  "example": "$39.99"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete a Book Details from the Database based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
