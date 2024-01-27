@@ -16,7 +16,10 @@ const getAllBooksdetails = async (req, res) => {
     };
 
 //Read (GET) one Book Details (based on Id) from the database
-const getSingleBookdetails = async (req, res) => { 
+const getSingleBookdetails = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must use a valid Book id to find a Book Details.');
+  }
         // swagger.tags = ['books']
         const bookId = new ObjectId(req.params.id);
         const result = await mongodb            
@@ -57,8 +60,12 @@ const createBookdetails = async (req, res, next) => {
 };
 //Update (PUT) an old Book Details in the Database
 const updateBookdetails = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must use a valid Book id to update a Book details.');
+  }
   // swagger.tags = ['books']
     const bookId = new ObjectId(req.params.id);
+    // be aware of updateOne if you only want to update specific fields
      const updateBook = {
       bookISBN: req.body.bookISBN,
            bookTitle: req.body.bookTitle,
@@ -84,8 +91,11 @@ const updateBookdetails = async (req, res) => {
 
 //Delete (DELETE) a Book Details from the Database
 const deleteBookdetails = async (req, res) => {
-  // swagger.tags = ['books']
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must use a valid Book id to delete a Book details.');
+  }
     const bookId = new ObjectId(req.params.id);
+     // be aware of deleteOne, changes can't be undone
     const response = await mongodb
     .getDatabase()
     .db()
