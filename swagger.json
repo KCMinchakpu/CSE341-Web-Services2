@@ -108,7 +108,7 @@
         }
       },
       "put": {
-        "description": "Update and Old Bokk Details in the Database based on ID",
+        "description": "Update an Old Book Details in the Database based on ID",
         "parameters": [
           {
             "name": "id",
