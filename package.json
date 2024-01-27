@@ -1,0 +1,25 @@
+{
+  "name": "cse341-web-services2",
+  "version": "1.0.0",
+  "description": "This project will perform CRUD operations on a MongoDB database, be published to the Web, incorporate security measures, and include API documentation.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KCMinchakpu/CSE341-Web-Services2.git"
+  },
+  "keywords": [
+    "Express",
+    "MongoDB",
+    "NodeJS",
+    "Swagger"
+  ],
+  "author": "Kevin Cross Minchakpu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KCMinchakpu/CSE341-Web-Services2/issues"
+  },
+  "homepage": "https://github.com/KCMinchakpu/CSE341-Web-Services2#readme"
+}
