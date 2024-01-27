@@ -30,7 +30,7 @@ const getSingleBookdetails = async (req, res) => {
             });
     };
 
-//Create (POST) a new contact
+//Create (POST) a new Book Details in the Database
 const createBookdetails = async (req, res, next) => {
     // swagger.tags = ['books']
     //New Book Details
@@ -55,7 +55,7 @@ const createBookdetails = async (req, res, next) => {
         res.status(500).json(resultBack.error || 'Sorry, New Book Details was not created.');
     }
 };
-//Update (PUT) an old contact
+//Update (PUT) an old Book Details in the Database
 const updateBookdetails = async (req, res) => {
     // swagger.tags = ['books']
     const BookId = new ObjectId(req.params.id);
@@ -81,7 +81,7 @@ const updateBookdetails = async (req, res) => {
     }
 };
 
-//Delete (DELETE) a contact
+//Delete (DELETE) a Book Details from the Database
 const deleteBookdetails = async (req, res, next) => {
     // swagger.tags = ['books']
     const BookId = new ObjectId(req.params.id);
@@ -92,7 +92,7 @@ const deleteBookdetails = async (req, res, next) => {
         .deleteOne({ _id: BookId}, true);
     console.log(resultBack.deletedCount + 'book was deleted.');
     if(resultBack.acknowledged) {
-        res.status(200).send(resultBack.deletedCount + "books were deleted.");
+        res.status(200).send(resultBack.deletedCount + "books was deleted.");
     } else {
         res.status(500).json(resultBack.error || 'Sorry. the Book Details was not deleted.');
     }
