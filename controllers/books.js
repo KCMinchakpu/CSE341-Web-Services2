@@ -57,46 +57,46 @@ const createBookdetails = async (req, res, next) => {
 };
 //Update (PUT) an old Book Details in the Database
 const updateBookdetails = async (req, res) => {
-    // swagger.tags = ['books']
-    const BookId = new ObjectId(req.params.id);
-    const updatedInfo = {
-        bookISBN: req.body.bookISBN,
-        bookTitle: req.body.bookTitle,
-        bookDescription: req.body.bookDescription,
-        authorName: req.body.authorName,
-        releaseDate: req.body.releaseDate,
-        publisher: req.body.publisher,
-        price: req.body.price
-    };
-    const resultBack = await mongodb
-        .getDatabase()
-        .db()
-        .collection('books')
-        .replaceOne({ _id: BookId}, updatedInfo);
-    console.log(resultBack.modifiedCount + 'book was updated');
-    if(resultBack.modifiedCount > 0) {
-        res.status(204).send(resultBack.modifiedCount + "book was updated.");
-    } else {
-        res.status(500).json(resultBack.error || 'Sorry. New Details could not be updated.');
-    }
-};
+    const bookId = new ObjectId(req.params.id);
+     
+     const updateBook = {
+      bookISBN: req.body.bookISBN,
+           bookTitle: req.body.bookTitle,
+           bookDescription: req.body.bookDescription,
+           authorName: req.body.authorName,
+           releaseDate: req.body.releaseDate,
+           publisher: req.body.publisher,
+           price: req.body.price
+     };
+     const response = await mongodb
+       .getDatabase()
+       .db()
+       .collection('books')
+       .replaceOne({ _id: bookId }, updateBook);
+     console.log(response);
+     if (response.modifiedCount > 0) {
+       res.status(204).send();
+     } else {
+       res.status(500).json(response.error || 'Some error occurred while updating the Book details.');
+     }
+   };
+   
 
 //Delete (DELETE) a Book Details from the Database
-const deleteBookdetails = async (req, res, next) => {
-    // swagger.tags = ['books']
-    const BookId = new ObjectId(req.params.id);
-    const resultBack = await mongodb
-        .getDatabase()
-        .db()
-        .collection('books')
-        .deleteOne({ _id: BookId}, true);
-    console.log(resultBack.deletedCount + 'book was deleted.');
-    if(resultBack.acknowledged) {
-        res.status(200).send(resultBack.deletedCount + "books was deleted.");
+const deleteBookdetails = async (req, res) => {
+    const bookId = new ObjectId(req.params.id);
+    const response = await mongodb
+    .getDatabase()
+    .db()
+    .collection('books')
+    .deleteOne({ _id: bookId }, true);
+    console.log(response);
+    if (response.deletedCount > 0) {
+      res.status(204).send();
     } else {
-        res.status(500).json(resultBack.error || 'Sorry. the Book Details was not deleted.');
+      res.status(500).json(response.error || 'Some error occurred while deleting the Book Details.');
     }
-};
+  };
     module.exports = { 
         getAllBooksdetails, 
         getSingleBookdetails,

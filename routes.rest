@@ -56,3 +56,23 @@ Content-Type: application/json
     "publisher": "Addison-Wesley",
     "price": "$93.97"
 }
+
+/////////////////////////////////////////////////////////////////
+
+### Update a Book Details in the Database
+PUT http://localhost:8085/books/65b4f38efb2e7b7d936ead50 HTTP/1.1
+Content-Type: application/json
+
+{
+    "bookISBN": "9780470147627",
+    "bookTitle": "The C# Programming Language, 3th Edition",
+    "bookDescription": "Building on the success of its previous editions, this must-have guide continues its popular tutorial approach and brings you a straightforward introduction to developing",
+    "authorName": "Richard Stones",
+    "releaseDate": "2009",
+    "publisher": "Octate System",
+    "price": "$ 25.99"
+}
+
+/////////////////////////////////////////////////////////////
+### Delete Book Details from the Database
+DELETE http://localhost:8085/books/65b4f38efb2e7b7d936ead50 HTTP/1.1
