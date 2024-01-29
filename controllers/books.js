@@ -17,7 +17,9 @@ const getAllBooksdetails = async (req, res) => {
 
 //Read (GET) one Book Details (based on Id) from the database
 const getSingleBookdetails = async (req, res) => { 
-  
+    if (!ObjectId.isValid(req.params.id)) {
+        res.status(400).json('Must use a valid contact id to find a contact.');
+      }
         const bookId = new ObjectId(req.params.id);
         const result = await mongodb            
             .getDatabase()

@@ -9,7 +9,6 @@ const saveBookdetails = (req, res, next) => {
     releaseDate: 'required|string',
     publisher: 'required|string',
     price: 'required|string'
-
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
