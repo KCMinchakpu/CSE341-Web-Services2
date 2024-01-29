@@ -1,4 +1,4 @@
-const validator = require('../helpers/validate');
+const validator = require('../pathfinders/validate');
 
 const saveBookdetails = (req, res, next) => {
   const validationRule = {
