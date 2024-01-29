@@ -1,9 +1,14 @@
 const router = require('express').Router();
 
 router.use('/', require('./swagger'));
+// req.isAuthenticated is provided from the auth router
 router.get('/', (req, res) => {
-    // swagger.tags = ['Hello Wordld']
-    res.send('Hello, Welcome to Books API!')});
+    res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+  });
+
+router.get('/profile', requiresAuth(), (req, res) => {
+  res.send(JSON.stringify(req.oidc.user));
+})
 
 router.use('/books', require('./books'));
 
