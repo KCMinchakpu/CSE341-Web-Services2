@@ -25,16 +25,13 @@ const getSingleBookdetails = async (req, res) => {
             .getDatabase()
             .db()
             .collection('books')
-            .find({ _id: bookId})
-            .toArray((err, result) => {
-              if (err) {
-                res.status(400).json({ message: err });
-              }
-              res.setHeader('Content-Type', 'application/json');
-              res.status(200).json(result[0]);
-            });
-        };
-
+            .find({ _id: bookId});
+        result.toArray().then((lists) => {
+            res.setHeader('Content-Type', 'application/json');
+            res.status(200).json(lists[0]);
+    });
+  };
+  
 //Create (POST) a new Book Details in the Database
 const createBookdetails = async (req, res, next) => {
     // swagger.tags = ['books']
