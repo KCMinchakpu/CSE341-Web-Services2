@@ -135,13 +135,13 @@ PUT https://project2-part1-qiui.onrender.com/books/65b2d96492f5aefd951fe2d3 HTTP
 Content-Type: application/json
 
 {
-    "bookISBN": "9783943075083",
-    "bookTitle": "Modern Web Design and Development",
-    "bookDescription": "This eBook on Modern Web Design and Development touches on what Web designers should be ready for to keep abreast of new challenges and opportunities.",
-    "authorName": "Thomas Burkert",
-    "releaseDate": "2011",
-    "publisher": "Smashing Media",
-    "price": "$ 22.45"
+    "bookISBN": "9781804618295",
+    "bookTitle": " Modern Frontend Development with Node.js",
+    "bookDescription": "Almost a decade after the release of Node.js, the tooling used by frontend developers is fully embracing this cross-platform JavaScript runtime, which is sadly often limited to server-side web development.",
+    "authorName": "Florian Rappl",
+    "releaseDate": "2022",
+    "publisher": "Packt Publishing",
+    "price": "$34.99"
 }
 
 ### Delete Book Detals
