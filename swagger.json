@@ -13,7 +13,7 @@
   "paths": {
     "/": {
       "get": {
-        "description": "This is the Index Page",
+        "description": "This is the Index JS File",
         "responses": {
           "200": {
             "description": "OK"
@@ -33,7 +33,7 @@
     },
     "/books/": {
       "get": {
-        "description": "Get All Books Details from the Datebase",
+        "description": "Get All Books Details from the Database",
         "produces": [
           "application/json"
         ],
@@ -53,25 +53,25 @@
               "type": "object",
               "properties": {
                 "bookISBN": {
-                  "example": "9781484295137"
+                  "example": "9780321741769"
                 },
                 "bookTitle": {
-                  "example": "Introduction to Software Testing"
+                  "example": "The C# Programming Language, 4th Edition"
                 },
                 "bookDescription": {
-                  "example": "This simple and practical guide teaches you the fundamentals of software testing, with no prior experience required."
+                  "example": "The popular C# programming language combines the high productivity of rapid application development languages with the raw power of C and C++."
                 },
                 "authorName": {
-                  "example": "Panagiotis Leloudas"
+                  "example": "Anders Hejlsberg et al"
                 },
                 "releaseDate": {
-                  "example": "2023"
+                  "example": "2011"
                 },
                 "publisher": {
-                  "example": "Apress"
+                  "example": "Addison-Wesley"
                 },
                 "price": {
-                  "example": "$34.79"
+                  "example": "$39.99"
                 }
               }
             }
@@ -81,9 +81,6 @@
           "201": {
             "description": "Created"
           },
-          "412": {
-            "description": "Precondition Failed"
-          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -92,7 +89,7 @@
     },
     "/books/{id}": {
       "get": {
-        "description": "Get a Book Details from the Data based on ID",
+        "description": "Get a Book Details from the Database based on ID",
         "produces": [
           "application/json"
         ],
@@ -107,14 +104,11 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
           }
         }
       },
       "put": {
-        "description": "Update a Book Details in the Database based on Id",
+        "description": "Update an Old Book Details in the Database based on ID",
         "parameters": [
           {
             "name": "id",
@@ -129,25 +123,25 @@
               "type": "object",
               "properties": {
                 "bookISBN": {
-                  "example": "9781484295137"
+                  "example": "9780321741769"
                 },
                 "bookTitle": {
-                  "example": "Introduction to Software Testing"
+                  "example": "The C# Programming Language, 4th Edition"
                 },
                 "bookDescription": {
-                  "example": "This simple and practical guide teaches you the fundamentals of software testing, with no prior experience required."
+                  "example": "The popular C# programming language combines the high productivity of rapid application development languages with the raw power of C and C++."
                 },
                 "authorName": {
-                  "example": "Panagiotis Leloudas"
+                  "example": "Anders Hejlsberg et al"
                 },
                 "releaseDate": {
-                  "example": "2023"
+                  "example": "2011"
                 },
                 "publisher": {
-                  "example": "Apress"
+                  "example": "Addison-Wesley"
                 },
                 "price": {
-                  "example": "$34.79"
+                  "example": "$39.99"
                 }
               }
             }
@@ -157,19 +151,13 @@
           "204": {
             "description": "No Content"
           },
-          "400": {
-            "description": "Bad Request"
-          },
-          "412": {
-            "description": "Precondition Failed"
-          },
           "500": {
             "description": "Internal Server Error"
           }
         }
       },
       "delete": {
-        "description": "Delete a Book Details in the Database based on ID",
+        "description": "Delete a Book Details from the Database based on ID",
         "parameters": [
           {
             "name": "id",
@@ -179,11 +167,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
+          "204": {
+            "description": "No Content"
           },
           "500": {
             "description": "Internal Server Error"
