@@ -2,10 +2,7 @@
 ### Get all Books Details from the Database
 GET http://localhost:8085/books HTTP/1.1
 
-////////////////////////////////////////////////////////////////////////////////
-
-### Get single Book Details from the Database by Id 
-### (Programming for Absolute Beginners)
+### Get single Book Details by Id (Programming for Absolute Beginners)
 GET http://localhost:8085/books/65af07af1de1c77790af2624 HTTP/1.1
 
 ### (Practical Node.js)
@@ -35,12 +32,6 @@ GET http://localhost:8085/books/65b254ce61690a1b9153c082 HTTP/1.1
 ### (Web Animation using JavaScript)
 GET http://localhost:8085/books/65b256ef01a8fb81bb68850b HTTP/1.1
 
-### Fundamentals of Database Systems)
-GET http://localhost:8085/books/65b2d335a413663275c0560e HTTP/1.1
-
-### (Modern Web Design and Development)
-GET http://localhost:8085/books/65b2d5ba035bf9650a7f4cba HTTP/1.1
-
 ///////////////////////////////////////////////////////////////
 
 ### Create New Book Details 
@@ -48,76 +39,74 @@ POST http://localhost:8085/books HTTP/1.1
 Content-Type: application/json
 
 {
-    "bookISBN": "9780321741769",
-    "bookTitle": "The C# Programming Language, 4th Edition",
-    "bookDescription": "The popular C# programming language combines the high productivity of rapid application development languages with the raw power of C and C++.",
-    "authorName": "Anders Hejlsberg et al",
+    "bookISBN": "9783943075083",
+    "bookTitle": "Modern Web Design and Development",
+    "bookDescription": "This eBook on Modern Web Design and Development touches on what Web designers should be ready for to keep abreast of new challenges and opportunities.",
+    "authorName": "Thomas Burkert",
     "releaseDate": "2011",
-    "publisher": "Addison-Wesley",
-    "price": "$93.97"
+    "publisher": "Smashing Media",
+    "price": "$ 22.44"
 }
 
-/////////////////////////////////////////////////////////////////
-
-### Update a Book Details in the Database
-PUT http://localhost:8085/books/65b4f38efb2e7b7d936ead50 HTTP/1.1
+//////////////////////////////////////////////////////////////
+### Update Book Details
+PUT http://localhost:8085/books/65b2d5ba035bf9650a7f4cba HTTP/1.1
 Content-Type: application/json
 
 {
-    "bookISBN": "9780470147627",
-    "bookTitle": "The C# Programming Language, 3th Edition",
-    "bookDescription": "Building on the success of its previous editions, this must-have guide continues its popular tutorial approach and brings you a straightforward introduction to developing",
-    "authorName": "Richard Stones",
-    "releaseDate": "2009",
-    "publisher": "Octate System",
-    "price": "$ 25.99"
+    "bookISBN": "9783943075083",
+    "bookTitle": "Modern Web Design and Development",
+    "bookDescription": "This eBook on Modern Web Design and Development touches on what Web designers should be ready for to keep abreast of new challenges and opportunities.",
+    "authorName": "Thomas Burkert",
+    "releaseDate": "2011",
+    "publisher": "Smashing Media",
+    "price": "$ 52.48"
 }
 
 /////////////////////////////////////////////////////////////
-### Delete Book Details from the Database
-DELETE http://localhost:8085/books/65b4f38efb2e7b7d936ead50 HTTP/1.1
+### Delete Book Details
+DELETE http://localhost:8085/books/65b2d96492f5aefd951fe2d3 HTTP/1.1
 
 
 ////////////////////////////////////////////////////////////
-
-//PRODUCTION Deployed on Render
+//// PRODUCTION Deploy on Render
 ### Get all Books Details
-GET https://project2-part1-vu03.onrender.com/books HTTP/1.1
+GET https://project2-part1-z4k6.onrender.com/books HTTP/1.1
 
 ### Get a Book Detals Based on ID
 ### (Programming for Absolute Beginners)
-GET https://project2-part1-vu03.onrender.com/books/65af07af1de1c77790af2624 HTTP/1.1
+GET https://project2-part1-z4k6.onrender.com/books/65af07af1de1c77790af2624 HTTP/1.1
 
 ### (Egoyibo)
-GET https://project2-part1-vu03.onrender.com/books/65af08001de1c77790af2625 HTTP/1.1
+GET https://project2-part1-z4k6.onrender.com/books/65af08001de1c77790af2625 HTTP/1.1
 
 ### (Jane)
-GET https://project2-part1-vu03.onrender.com/books/65af08251de1c77790af2626 HTTP/1.1
+GET https://project2-part1-z4k6.onrender.com/books/65af08251de1c77790af2626 HTTP/1.1
 
 ### (Margaret)
-GET https://project2-part1-vu03.onrender.com/books/65af08451de1c77790af2627 HTTP/1.1
+GET https://project2-part1-z4k6.onrender.com/books/65af08451de1c77790af2627 HTTP/1.1
 
 ### (Luka)
-GET https://project2-part1-vu03.onrender.com/books/65af086b1de1c77790af2628 HTTP/1.1
+GET https://project2-part1-z4k6.onrender.com/books/65af086b1de1c77790af2628 HTTP/1.1
 
 ### ()
-GET https://project2-part1-vu03.onrender.com/books/65b24e8f61690a1b9153c07f HTTP/1.1
+GET https://project2-part1-z4k6.onrender.com/books/65b24e8f61690a1b9153c07f HTTP/1.1
 
 ### ()
-GET https://project2-part1-vu03.onrender.com/books/65b24fef61690a1b9153c080 HTTP/1.1
+GET https://project2-part1-z4k6.onrender.com/books/65b24fef61690a1b9153c080 HTTP/1.1
 
 ### ()
-GET https://project2-part1-vu03.onrender.com/books/65b251d361690a1b9153c081 HTTP/1.1
+GET https://project2-part1-z4k6.onrender.com/books/65b251d361690a1b9153c081 HTTP/1.1
 
 ### ()
-GET https://project2-part1-vu03.onrender.com/books/65b254ce61690a1b9153c082 HTTP/1.1
+GET https://project2-part1-z4k6.onrender.com/books/65b254ce61690a1b9153c082 HTTP/1.1
 ### ()
-GET https://project2-part1-vu03.onrender.com/books/65b256ef01a8fb81bb68850b HTTP/1.1
+GET https://project2-part1-z4k6.onrender.com/books/65b256ef01a8fb81bb68850b HTTP/1.1
 
 
 
 ### Create New Books Details
-POSThttps://project2-part1-vu03.onrender.com/books HTTP/1.1
+POST https://project2-part1-z4k6.onrender.com/books HTTP/1.1
 Content-Type: application/json
 
 {
@@ -131,7 +120,7 @@ Content-Type: application/json
 }
 
 ### Update Book Details
-PUT https://project2-part1-vu03.onrender.com/books/65b2d96492f5aefd951fe2d3 HTTP/1.1
+PUT https://project2-part1-z4k6.onrender.com/books/65b2d96492f5aefd951fe2d3 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -144,5 +133,5 @@ Content-Type: application/json
     "price": "$ 22.45"
 }
 
-### Delete Book Detals
-DELETE https://project2-part1-vu03.onrender.com/books/(book id) HTTP/1.1
+### Delete a Book Detals
+DELETE https://project2-part1-z4k6.onrender.com/books HTTP/1.1

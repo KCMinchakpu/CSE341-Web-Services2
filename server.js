@@ -7,7 +7,7 @@ const app = express();
 
 const port = process.env.PORT || 8085;
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader(
@@ -22,28 +22,28 @@ app.use((req, res, next) => {
     });
 app.use('/', require('./routes'));
 app.use(async (req, res, next) => {
-    next({
-        status: 404,
-        message: "Sorry, this route don't exists."
+        next({
+            status: 404,
+            message: "Sorry, this route don't exists."
+        });
+    })
+    .use(async (err, req, res, next) => {
+        console.error(`Error at: "${req.originalUrl}": ${err.message}`);
+        let message = err.status == 404 ? err.message : 'Sorry, an error occurred in your request.';
+        res.status(err.status || 500).json({
+            error: message
+        });
     });
-})
-.use(async (err, req, res) => {
-    console.error(`Error at: "${req.originalUrl}": ${err.message}`);
-    let message = err.status == 404 ? err.message : 'Sorry, an error occurred in your request.';
-    res.status(err.status || 500).json({
-        error: message
-    });
-});
 
 process.on('uncaughtException', (err, origin) => {
-    console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
-  });
-
+        console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
+      });
 mongodb.initDb((err) => {
     if (err) {
         console.log(err);
     } else {
         app.listen(port, () => {
-            console.log(`Database is listening and node Runing on port ${port}.`)});
+            console.log(`Database is listening and node Runing on port ${port}.`)
+        });
     }
 });
