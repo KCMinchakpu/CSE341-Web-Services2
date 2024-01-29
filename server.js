@@ -21,7 +21,7 @@ const config = {
 app.use(bodyParser.json())
 app.get('/profile', requiresAuth(), (req, res) => {
     res.send(JSON.stringify(req.oidc.user));
-  })
+  });
   
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
