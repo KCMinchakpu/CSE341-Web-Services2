@@ -1,12 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const dotenv =require('dotenv').config();
 const mongodb = require('./data/database');
-const app = express();
+
 
 
 
 const port = process.env.PORT || 8085;
 
+const app = express();
 
 app.use(bodyParser.json())
 app.get('/profile', requiresAuth(), (req, res) => {
