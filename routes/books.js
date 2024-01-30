@@ -3,7 +3,7 @@ const router = express();
 
 const booksController = require('../controllers/books');
 const validation = require('../middleware/validate');
-const isAuthenticated = require("../middleware/authenticate");
+const {isAuthenticated} = require("../middleware/authenticate");
 
 //Read (Get) All Books Details from the database
 router.get('/', booksController.getAllBooksdetails);
