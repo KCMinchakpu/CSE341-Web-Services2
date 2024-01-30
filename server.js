@@ -20,9 +20,9 @@ app
     saveUninitialized: true,
 }))
 // This is the basic express session({..}) initialisation.
-.use(passport.initialize());
+.use(passport.initialize())
 // init passport on every route call
-use(passport.session())
+.use(passport.session())
 // allow passport to use "express-session".
 .use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
