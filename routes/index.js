@@ -1,12 +1,13 @@
 const router = require('express').Router();
 
 router.use('/', require('./swagger'));
-// req.isAuthenticated is provided from the auth router
-router.get('/', (req, res) => {
-    res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-  });
-
 router.use('/books', require('./books'));
-
-
+// req.isAuthenticated is provided from the auth router
+router.get('.login', passport.authenticate('github'), (req, res) => {});
+router.get('/logout', function(req, res, next) {
+  req.logout(function(err) {
+    if(err) {return next(err);}
+    res.redirect('/');
+  });
+});
 module.exports = router;
