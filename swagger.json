@@ -5,11 +5,10 @@
     "description": "This is an API for Creating, Updating and Deleting Books Details in a Database",
     "version": "1.0.0"
   },
-  "host": "http://localhost:8085",
+  "host": "localhost:8085",
   "basePath": "/",
   "schemes": [
-    "http",
-    "https"
+    "http"
   ],
   "paths": {
     "/": {
