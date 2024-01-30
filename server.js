@@ -2,7 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const dotenv =require('dotenv').config();
 const mongodb = require('./data/database');
-
+const passport = require('passport');
+const session = require('express-session');
 
 
 
@@ -11,10 +12,6 @@ const port = process.env.PORT || 8085;
 const app = express();
 
 app.use(bodyParser.json())
-app.get('/profile', requiresAuth(), (req, res) => {
-    res.send(JSON.stringify(req.oidc.user));
-  });
-  
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader(
@@ -27,8 +24,6 @@ app.use((req, res, next) => {
     );
     next();
     });
-// auth router attaches /login, /logout, and /callback routes to the baseURL
-
 app.use('/', require('./routes'));
 app.use(async (req, res, next) => {
     next({
