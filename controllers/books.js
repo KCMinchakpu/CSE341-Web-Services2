@@ -34,8 +34,7 @@ const getSingleBookdetails = async (req, res) => {
   
 //Create (POST) a new Book Details in the Database
 const createBookdetails = async (req, res, next) => {
-    // swagger.tags = ['books']
-    //New Book Details
+      //New Book Details
     const newBookdetails = {
         bookISBN: req.body.bookISBN,
         bookTitle: req.body.bookTitle,
