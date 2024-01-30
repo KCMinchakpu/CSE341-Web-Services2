@@ -45,15 +45,15 @@ const createBookdetails = async (req, res, next) => {
         price: req.body.price
     };
     //Connect to database
-    const resultBack = await mongodb
+    const response = await mongodb
         .getDatabase()
         .db()
         .collection('books')
         .insertOne(newBookdetails);
-    if(resultBack.acknowledged) {
-        res.status(201).json(resultBack);
+    if(response.acknowledged) {
+        res.status(201).json(response);
     } else {
-        res.status(500).json(resultBack.error || 'Sorry, New Book Details was not created.');
+        res.status(500).json(response.error || 'Sorry, New Book Details was not created.');
     }
 };
 //Update (PUT) an old Book Details in the Database
