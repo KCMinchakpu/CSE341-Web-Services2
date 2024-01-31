@@ -4,7 +4,7 @@ const passport = require('passport');
 router.use('/', require('./swagger'));
 router.use('/books', require('./books'));
 // req.isAuthenticated is provided from the auth router
-router.get('.login', passport.authenticate('github'), (req, res) => {});
+router.get('/login', passport.authenticate('github'), (req, res) => {});
 router.get('/logout', function(req, res, next) {
   req.logout(function(err) {
     if(err) {return next(err);}

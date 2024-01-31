@@ -60,7 +60,7 @@ passport.use(new GitHubStrategy({
   },
 function(accessToken, refreshToken, profile, done) {
    // User.findOrCreate({ githubId: profile.id }, function (err, user) {
-      return done(null, profile);
+      return done(err, profile);
     //});
   }
 ));
@@ -68,11 +68,11 @@ function(accessToken, refreshToken, profile, done) {
 passport.serializeUser((user, done) => {done(null, user);});
 passport.deserializeUser((user, done) => {done(null, user);});
 
-app.get('/', (req, res) => {res.send(req.session.user) !== undefined ? `Logged in as ${req.session.user.displayName}` : "Logged Out" });
-app.get('github/callback', passport.authenticate('github', {
+app.get('/', (req, res) => { res.send(req.session.user) !== undefined ? `Logged in as ${req.session.user.displayName}` : "Logged Out" });
+app.get('/auth/github/callback', passport.authenticate('github', {
     failureRedirect: '/api-docs', session:false}), (req, res) => {
         req.session.user = req.user; 
-        res.redirect('/'); 
+        res.redirect('/api-docs'); 
     });
 
 mongodb.initDb((err) => {
