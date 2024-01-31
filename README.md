@@ -1,5 +1,5 @@
 # CSE341-Web-Services2
-This project will perform CRUD operations on a MongoDB database, be published to the Web, incorporate security measures, and include API documentation.
+This app performs CRUD operations on a MongoDB database, be published to the Web, incorporate security measures, and include API documentation.
 
 # How to run it
 1. Run npm install to install all the dependences you see in the package.json file. These include:
