@@ -5,8 +5,8 @@ const doc = {
     title: 'Book API',
     description: 'This is an API for Creating, Updating and Deleting Books Details in a Database'
   },
-  host: 'localhost:8085',
-  schemes: ['http']
+  host: 'localhost:8085', 'https://project2-part1-qiui.onrender.com',
+  schemes: ['http', 'https']
 };
 
 const outputFile = './swagger.json';
