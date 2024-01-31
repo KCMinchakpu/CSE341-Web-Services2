@@ -5,10 +5,10 @@
     "description": "This is an API for Creating, Updating and Deleting Books Details in a Database",
     "version": "1.0.0"
   },
-  "host": "https://project2-part1-qiui.onrender.com/",
+  "host": "https://project2-part1-qiui.onrender.com",
   "basePath": "/", 
   "schemes": [
-    "https", "http"
+    "https"
   ],
   "paths": {
     "/": {
