@@ -1,0 +1,228 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is an API for Creating, Updating and Deleting Books Details in a Database",
+    "version": "1.0.0",
+    "title": "Book API"
+  },
+  "host": "project2-part1-qiui.onrender.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/login": {
+      "get": {
+        "description": "This authenticate and Login a User into the App",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/logout": {
+      "get": {
+        "description": "This will log out the present User from the App",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api-docs": {
+      "get": {
+        "description": "This will load the Swagger home page",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/books/": {
+      "get": {
+        "description": "Get All Books Details from the Database",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "Create a New Book Details in the Database",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/body"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "481": {
+            "description": ""
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/books/{id}": {
+      "get": {
+        "description": "Get a Book Details from the Database based on ID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "description": "Update an Old Book Details in the Database based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/body_1"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "481": {
+            "description": ""
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete a Book Details from the Database based on ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "481": {
+            "description": ""
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "body_1": {
+      "type": "object",
+      "properties": {
+        "bookISBN": {
+          "example": "9780321741769"
+        },
+        "bookTitle": {
+          "example": "The C# Programming Language, 4th Edition"
+        },
+        "bookDescription": {
+          "example": "The popular C# programming language combines the high productivity of rapid application development languages with the raw power of C and C++."
+        },
+        "authorName": {
+          "example": "Anders Hejlsberg et al"
+        },
+        "releaseDate": {
+          "example": "2011"
+        },
+        "publisher": {
+          "example": "Addison-Wesley"
+        },
+        "price": {
+          "example": "$39.99"
+        }
+      }
+    },
+    "body": {
+      "type": "object",
+      "properties": {
+        "bookISBN": {
+          "example": "9780321741769"
+        },
+        "bookTitle": {
+          "example": "The C# Programming Language, 4th Edition"
+        },
+        "bookDescription": {
+          "example": "The popular C# programming language combines the high productivity of rapid application development languages with the raw power of C and C++."
+        },
+        "authorName": {
+          "example": "Anders Hejlsberg et al"
+        },
+        "releaseDate": {
+          "example": "2011"
+        },
+        "publisher": {
+          "example": "Addison-Wesley"
+        },
+        "price": {
+          "example": "$39.99"
+        }
+      }
+    }
+  }
+}
