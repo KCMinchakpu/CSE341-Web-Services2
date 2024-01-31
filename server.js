@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const dotenv =require('dotenv').config();
+require('dotenv').config();
 const mongodb = require('./data/database');
 const passport = require('passport');
 const session = require('express-session');
@@ -48,7 +48,7 @@ passport.use(new GitHubStrategy({
   },
 function(accessToken, refreshToken, profile, done) {
    // User.findOrCreate({ githubId: profile.id }, function (err, user) {
-      return done(err, profile);
+      return done(null, profile);
     //});
   }
 ));
@@ -56,18 +56,19 @@ function(accessToken, refreshToken, profile, done) {
 passport.serializeUser((user, done) => {done(null, user);});
 passport.deserializeUser((user, done) => {done(null, user);});
 
-app.get('/', (req, res) => { res.send(req.session.user) !== undefined ? `Logged in as ${req.session.user.displayName}` : "Logged Out" });
+app.get('/', (req, res) => { res.send(req.session.user !== undefined? `Logged in as ${req.session.user.displayName}` : "Logged Out")});
 app.get('/github/callback', passport.authenticate('github', {
     failureRedirect: '/api-docs', session:false}), (req, res) => {
         req.session.user = req.user; 
         res.redirect('/'); 
     });
-
+ 
 mongodb.initDb((err) => {
     if (err) {
         console.log(err);
     } else {
         app.listen(port, () => {
             console.log(`Database is listening and node Runing on port ${port}.`)});
+            
     }
 });
