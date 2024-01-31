@@ -8,7 +8,7 @@
   "host": "https://project2-part1-qiui.onrender.com/",
   "basePath": "/", 
   "schemes": [
-    "http", "https"
+    "https", "http"
   ],
   "paths": {
     "/": {
