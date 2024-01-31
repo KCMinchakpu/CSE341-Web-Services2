@@ -5,7 +5,7 @@ const doc = {
     title: 'Book API',
     description: 'This is an API for Creating, Updating and Deleting Books Details in a Database'
   },
-  host: 'https://project2-part1-qiui.onrender.com',
+  host: 'project2-part1-qiui.onrender.com',
   schemes: ['https']
 };
 
