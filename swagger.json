@@ -6,24 +6,32 @@
     "version": "1.0.0"
   },
   "host": "project2-part1-qiui.onrender.com",
-  "basePath": "/", 
-  "schemes": [
-    "https"
-  ],
+  "basePath": "/",
+  "schemes": ["https"],
   "paths": {
-    "/": {
+    "/login": {
       "get": {
-        "description": "This is the Index JS File",
+        "description": "This authenticate and Login a User into the App",
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/logout": {
+      "get": {
+        "description": "This will log out the present User from the App",
+        "responses": {
+          "default": {
+            "description": ""
           }
         }
       }
     },
     "/api-docs": {
       "get": {
-        "description": "",
+        "description": "This will load the Swagger home page",
         "responses": {
           "default": {
             "description": ""
@@ -81,6 +89,12 @@
           "201": {
             "description": "Created"
           },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "481": {
+            "description": ""
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -104,6 +118,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       },
@@ -151,6 +168,15 @@
           "204": {
             "description": "No Content"
           },
+          "400": {
+            "description": "Bad Request"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "481": {
+            "description": ""
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -169,6 +195,12 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "481": {
+            "description": ""
           },
           "500": {
             "description": "Internal Server Error"
