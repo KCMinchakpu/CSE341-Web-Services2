@@ -6,7 +6,7 @@
     "version": "1.0.0"
   },
   "host": "https://project2-part1-qiui.onrender.com/",
-  "basePath": "https://project2-part1-qiui.onrender.com/", 
+  "basePath": "/", 
   "schemes": [
     "http", "https"
   ],
